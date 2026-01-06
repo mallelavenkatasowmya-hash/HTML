@@ -1,76 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Bus Booking System</title>
-<link rel="stylesheet" href="busbooking_style.css">
+  <meta charset="UTF-8">
+  <title>Bus Booking System</title>
+  <link rel="stylesheet" href="busbooking_style.css">
 </head>
+
 <body>
 
-<h1>Bus Booking System</h1>
+  <h1>Bus Booking System</h1>
 
-<!-- SEARCH BUS -->
-<div class="box">
-  <h2>Search Bus</h2>
-  <input id="source" placeholder="Source">
-  <input id="destination" placeholder="Destination">
-  <input type="date">
-  <input type="time">
-  <button onclick="searchBus()">Search</button>
-</div>
-<!-- BUS LIST -->
-<div class="box" id="busList"></div>
-<!-- SEAT SELECTION -->
-<div class="box" id="seatBox" style="display:none">
-  <h2>Select Seats</h2>
-  <div id="seatLayout"></div>
-  <button onclick="goPassenger()">Continue</button>
-</div>
-<!-- PASSENGER DETAILS -->
-<div class="box" id="passengerBox" style="display:none">
-  <h2>Passenger Details</h2>
-  <input id="pName" placeholder="Name">
-  <input type="number" id="pAge" placeholder="Age">
-  <select id="pGender">
-    <option value="">Select Gender</option>
-    <option>Male</option>
-    <option>Female</option>
-    <option>Other</option>
-  </select>
-  <input id="pMobile" placeholder="Mobile Number">
-  <button onclick="goPayment()">Proceed to Payment</button>
-</div>
-<!-- PAYMENT -->
-<div class="box" id="paymentBox" style="display:none">
-  <h2>Payment</h2>
-  <select id="paymentMethod">
-    <option value="">Select Payment</option>
-    <option>UPI</option>
-    <option>Card</option>
-    <option>Net Banking</option>
-  </select>
-  <button onclick="confirmBooking()">Confirm Booking</button>
-</div>
-<!-- CONFIRMATION -->
-<div class="box" id="confirmBox" style="display:none"></div>
-<!-- ADMIN LOGIN -->
-<div class="box" id="adminLoginBox">
-  <h2>Admin Login</h2>
-  <input id="adminUser" placeholder="Username">
-  <input type="password" id="adminPass" placeholder="Password">
-  <button onclick="adminLogin()">Login</button>
-</div>
-<!-- ADMIN PANEL -->
-<div class="box" id="adminPanel" style="display:none">
-  <h2>Admin Panel</h2>
+  <!-- SEARCH BUS -->
+  <div class="box">
+    <h2>Search Bus</h2>
+    <input id="source" placeholder="Source">
+    <input id="destination" placeholder="Destination">
+    <input type="date">
+    <input type="time">
+    <button onclick="searchBus()">Search</button>
+  </div>
+  <!-- BUS LIST -->
+  <div class="box" id="busList"></div>
+  <!-- SEAT SELECTION -->
+  <div class="box" id="seatBox" style="display:none">
+    <h2>Select Seats</h2>
+    <div id="seatLayout"></div>
+    <button onclick="goPassenger()">Continue</button>
+  </div>
+  <!-- PASSENGER DETAILS -->
+  <div class="box" id="passengerBox" style="display:none">
+    <h2>Passenger Details</h2>
+    <input id="pName" placeholder="Name">
+    <input type="number" id="pAge" placeholder="Age">
+    <select id="pGender">
+      <option value="">Select Gender</option>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Other</option>
+    </select>
+    <input id="pMobile" placeholder="Mobile Number">
+    <button onclick="goPayment()">Proceed to Payment</button>
+  </div>
+  <!-- PAYMENT -->
+  <div class="box" id="paymentBox" style="display:none">
+    <h2>Payment</h2>
+    <select id="paymentMethod" onchange="showPayment()">
+      <option value="">Select Payment Method</option>
+      <option>UPI</option>
+      <option>Card</option>
+      <option>Net Banking</option>
+    </select>
+    <div id="paymentDields"></div>
+    <button onclick="confirmBooking()">Confirm Booking</button>
+  </div>
+  <!-- CONFIRMATION -->
+  <div class="box" id="confirmBox" style="display:none"></div>
+  <!-- ADMIN LOGIN -->
+  <div class="box" id="adminLoginBox">
+    <h2>Admin Login</h2>
+    <input id="adminUser" placeholder="Username">
+    <input type="password" id="adminPass" placeholder="Password">
+    <button onclick="adminLogin()">Login</button>
+  </div>
+  <!-- ADMIN PANEL -->
+  <div class="box" id="adminPanel" style="display:none">
+    <h2>Admin Panel</h2>
 
-  <input id="busName" placeholder="Bus Name">
-  <input id="busFare" placeholder="Fare">
-  <button onclick="addOrUpdateBus()">Add / Update Bus</button>
+    <input id="busName" placeholder="Bus Name">
+    <input id="busFare" placeholder="Fare">
+    <input id="busTime" placeholder="Time">
+    <button onclick="addOrUpdateBus()">Add / Update Bus</button>
+    <div id="adminBusList"></div>
+    <button onclick="logoutAdmin()">Logout</button>
+  </div>
 
-  <button onclick="logoutAdmin()">Logout</button>
-</div>
-
-<script src="busbooking_script.js"></script>
+  <script src="busbooking_script.js"></script>
 </body>
+
 </html>

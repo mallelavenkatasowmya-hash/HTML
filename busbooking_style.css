@@ -1,59 +1,117 @@
 body {
   font-family: Arial;
-  background: #f2f2f2;
+  background: #f2f2f2;;
+  margin:0;
+  padding:0;
+  color:#333;
+  
 }
-
-h1 {
-  text-align: center;
-}
-
 .box {
   background: white;
   width: 360px;
   margin: 15px auto;
   padding: 15px;
   border-radius: 8px;
-}
+} 
 
-input, select, button {
-  width: 90%;
+h1, h2, h3 {
+  text-align: center;
+  color:#222;
+  margin-bottom:10px;
+}
+input, select {
+  width: 100%;
   padding: 8px;
   margin: 5px 0;
+  box-sizing:border-box;
 }
 
 button {
-  background: #1e88e5;
+  background:#007bff;
   color: white;
   border: none;
   cursor: pointer;
+  padding:8px 16px;
+  margin-top:10px;
+  border-radius:4px;
+  font-size:14px;
+  
 }
 
 button:hover {
-  background: #0d47a1;
+  background-color: #0056b3;
 }
-
+#busList, #seatBox, #passengerBox, #paymentBox, #confirmBox, #adminPanel{
+  background-color:#fff;
+  padding:20px;
+  margin-top:20px;
+  border-radius:6px;
+  box-shadow:0 20px 6px rgba(0,0,0,0.1);
+  width:420px;
+  max-width:90%;
+  margin:20px auto;
+}
 .bus {
   border: 1px solid #ccc;
   padding: 10px;
   margin: 8px 0;
 }
-
+.admin-bus{
+  padding:10px;
+  border-bottom:none;
+}
+.admin-bus:last-child{
+  border-bottom:none;
+}
 #seatLayout {
-  display: grid;
-  grid-template-columns: repeat(4, 60px);
-  gap: 8px;
-  justify-content: center;
+  display:flex;
+  flex-wrap:wrap;
+  max-width:300;
+  margin-top:10px;
 }
 
 .seat {
   padding: 10px;
-  background: #ddd;
+  background-color:#f8f9fa;
   text-align: center;
   cursor: pointer;
   border-radius: 5px;
+  width:40px;
+  height:40px;
+  margin:5px;
+  line-height:center;
+  border:1px solid #555;
+  transition:0,2s;
 }
-
-.seat.selected {
-  background: green;
+.seat:hover{
+  background-color:#d1ecf1;
+}
+.selected {
+  background-color:#28a745;
   color: white;
+  border-color:15px;
+}
+#passengerBox h3{
+  margin-top:5px;
+  margin-top:15px;
+}
+hr{
+  border:0;
+  border-top:1px solid #eee;
+  margin:10px 0;
+}
+#paymentBox select{
+  width:220px;
+}
+#confirmBox{
+  line-height:1.6;
+}
+#confirmBox Span{
+  font-weight:bold;
+}
+#confirmBox h2{
+  color:#28a745;
+}
+#adminPanel input{
+  width:220px;
 }
